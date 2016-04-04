@@ -4,10 +4,10 @@
  
  It makes NSAttributedString more intitive by wrapping method chains and operators.
  
- #### Usage
+# Usage
  when you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it in a linear manner.
  
- ```
+ ```swift
  let label = UILabel(frame: CGRectMake(0, 0, 100, 50))
  
  // build NSAttributedString.
@@ -26,6 +26,6 @@
  ```
  
  
- This sample code generates the following styled label.
+This sample code generates the following styled label.
  
- <img width="261" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
+<img width="261" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
