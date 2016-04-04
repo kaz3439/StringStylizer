@@ -26,4 +26,4 @@ Type safely builder class for NSAttributedString. It makes NSAttributedString mo
  
 This sample code generates the following styled label.
  
-<img width="400" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
+<img width="350" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
