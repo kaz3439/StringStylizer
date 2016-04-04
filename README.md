@@ -1,8 +1,6 @@
 # StringStylizer
 
- Type safely builder class for NSAttributedString. 
- 
- It makes NSAttributedString more intitive by wrapping method chains and operators.
+Type safely builder class for NSAttributedString. It makes NSAttributedString more intitive by wrapping method chains and operators.
  
 # Usage
  when you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it in a linear manner.
