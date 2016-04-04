@@ -41,6 +41,7 @@ import UIKit
  <img width="261" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
 
  
+ 
  */
 class StringStylizer<T: StringStylizerStatus>: StringLiteralConvertible {
     typealias ExtendedGraphemeClusterLiteralType = String
