@@ -21,7 +21,8 @@ extension String {
     
     /**
      Instantiate StringStylizer<Styling> with range value from caller string.
-    
+     
+     - parameter range:Range<UInt> range to apply attributes
      - returns: StringStylizer<Styling> "StringStylizer" object which is "Styling" state
      */
     func stylize(range range: Range<UInt>) -> StringStylizer<RangeSelect> {
