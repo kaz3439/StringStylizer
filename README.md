@@ -30,6 +30,38 @@ let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeu
 - Swift 2.0+
 
 ## Installation
++ Install Carthage from Homebrew
+```
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+brew install carthage
+```
++ Move your project dir and create Cartfile
+```
+vim Cartfile
+```
++ Edit Cartfile
+```
+github "kazuhiro3439/StringStylizer"
+```
++ Create framework
+```
+carthage update --platform iOS
+```
++ In Xcode, move to "Genera > Build Phase > Linked Frameworks and Library"
++ Add the framework
++ Add a new run script and put the following code
+```
+/usr/local/bin/carthage copy-frameworks
+```
++ Click "+" At Input file and Add framework path
+```
+$(SRCROOT)/Carthage/Build/iOS/StringStylizer.framework
+```
++ write Import statement on your source file
+```
+Import StringStylizer
+```
 
 ## Example
  
