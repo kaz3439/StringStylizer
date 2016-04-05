@@ -56,7 +56,7 @@ This sample code generates the following styled label.
 <img width="350" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
 
 ## Architecture
-StringStylizer is based on **"Builder Pattern"**. In addition, it has some states implemented by **"Phantom Type"**.
+StringStylizer is based on **"Builder Pattern"**. In addition, it has some states managed by **"Phantom Type"**.
 
 (Figure)
 
