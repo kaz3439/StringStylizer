@@ -23,7 +23,7 @@ let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeu
 ## Feature
 - [x] Type strict format
 - [x] Assign ranges and attributes in a linear manner
-- [x] More readably
+- [x] More readable than NSAttributedString
 
 ## Requirements
 - iOS 8.0+
