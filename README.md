@@ -3,7 +3,7 @@ Type strict builder class for NSAttributedString.
 
 ## What's this?
 StringStylizer makes NSAttributedString more intuitive with method chains and operators.
-Building NSAttributedString is so difficult that it requires us to remember attribute names and types. When you write code with StringStylizer, There is no need to remember them :smiley:
+Building NSAttributedString is so difficult that it requires us to remember attribute names and types. If you write code with StringStylizer, There is no need to remember them :smiley:
 
 NSAttributedString has the following format.
 ```swift
