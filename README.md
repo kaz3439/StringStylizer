@@ -40,7 +40,7 @@ brew install carthage
 ```
 touch Cartfile
 ```
-+ add the following line in Cartfile
++ add the following line into Cartfile
 ```
 github "kazuhiro3439/StringStylizer"
 ```
