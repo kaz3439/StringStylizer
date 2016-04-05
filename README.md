@@ -55,7 +55,7 @@ This sample generates the following styled label.
  
 <img width="350" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
 
-Of cause, you can wrap up method chains in an abstructed method. 
+Of course, you can wrap up method chains in an abstructed method. 
 ```swift
 extension StringStylizer {
   func strong() -> NSAttributedString {
