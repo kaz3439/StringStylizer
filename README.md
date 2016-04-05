@@ -55,6 +55,17 @@ This sample generates the following styled label.
  
 <img width="350" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
 
+Of cause, you can wrap up method chains in an abstructed method. 
+```swift
+extension StringStylizer {
+  func strong() -> NSAttributedString {
+    self.stylize().color(0x123456).size(14).font(.HelveticaNeue_Italic).underline(.StyleDouble).attr
+  }
+}
+
+label.attributedText = "you".stylize().strong()
+```
+
 ## Architecture
 StringStylizer is based on **"Builder Pattern"**. In addition, it has some states managed by **"Phantom Type"**.
 
