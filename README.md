@@ -38,9 +38,9 @@ brew install carthage
 ```
 + Move your project dir and create Cartfile
 ```
-vim Cartfile
+touch Cartfile
 ```
-+ Edit Cartfile
++ add the following line in Cartfile
 ```
 github "kazuhiro3439/StringStylizer"
 ```
