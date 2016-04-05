@@ -106,4 +106,4 @@ Because of them, developers can write code in the liner manner and call proper m
 
 ## License
 
-StringStylizer is released under the MIT license. See LICENSE for details.
+StringStylizer is released under the MIT license. See LICENSE.txt for details.
