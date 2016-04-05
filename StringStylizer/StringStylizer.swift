@@ -40,8 +40,6 @@ import UIKit
  
  <img width="261" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
 
- 
- 
  */
 class StringStylizer<T: StringStylizerStatus>: StringLiteralConvertible {
     typealias ExtendedGraphemeClusterLiteralType = String
@@ -87,6 +85,12 @@ class StringStylizer<T: StringStylizerStatus>: StringLiteralConvertible {
     
     func color(rgb: UInt, alpha: Double = 1.0) -> StringStylizer<Styling> {
         _attributes[NSForegroundColorAttributeName] = self.rgb(rgb, alpha: alpha)
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    func color(color: UIColor) -> StringStylizer<Styling> {
+        _attributes[NSForegroundColorAttributeName] = color
         let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
         return stylizer
     }
@@ -149,7 +153,9 @@ class StringStylizer<T: StringStylizerStatus>: StringLiteralConvertible {
     }
     
     func underline(style: NSUnderlineStyle..., rgb: UInt? = nil, alpha: Double = 1) -> StringStylizer<Styling> {
-        let value = style.reduce(0) { (sum, elem) -> Int in
+        let _style: [NSUnderlineStyle] = style.isEmpty ? [.StyleSingle] : style
+        
+        let value = _style.reduce(0) { (sum, elem) -> Int in
             return sum | elem.rawValue
         }
         _attributes[NSUnderlineStyleAttributeName] = value
@@ -172,10 +178,13 @@ class StringStylizer<T: StringStylizerStatus>: StringLiteralConvertible {
         return stylizer
     }
     
-    func stroke(throgh style: NSUnderlineStyle..., rgb: UInt? = nil, alpha: Double = 1) -> StringStylizer<Styling>  {
-        let value = style.reduce(0) { (sum, elem) -> Int in
+    func strokeThrogh(style: NSUnderlineStyle..., rgb: UInt? = nil, alpha: Double = 1) -> StringStylizer<Styling>  {
+        let _style: [NSUnderlineStyle] = style.isEmpty ? [.StyleSingle] : style
+        
+        let value = _style.reduce(0) { (sum, elem) -> Int in
             return sum | elem.rawValue
         }
+        
         _attributes[NSStrikethroughStyleAttributeName] = value
         _attributes[NSStrikethroughColorAttributeName] = rgb.flatMap { self.rgb($0, alpha: alpha) }
         let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
@@ -200,14 +209,8 @@ class StringStylizer<T: StringStylizerStatus>: StringLiteralConvertible {
         return stylizer
     }
     
-    func paragraph(style: NSParagraphStyle) -> StringStylizer<Styling> {
-        _attributes[NSParagraphStyleAttributeName] = style
-        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
-        return stylizer
-    }
-    
-    func baseline(offset: Double) -> StringStylizer<Styling> {
-        _attributes[NSBaselineOffsetAttributeName] = offset
+    func baselineOffset(value: Double) -> StringStylizer<Styling> {
+        _attributes[NSBaselineOffsetAttributeName] = value
         let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
         return stylizer
     }
@@ -219,6 +222,120 @@ class StringStylizer<T: StringStylizerStatus>: StringLiteralConvertible {
             blue: CGFloat(rgb & 0x0000FF) / 255.0,
             alpha: CGFloat(alpha)
         )
+    }
+}
+
+extension StringStylizer {
+    func paragraph(style: NSParagraphStyle) -> StringStylizer<Styling> {
+        _attributes[NSParagraphStyleAttributeName] = style
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    func paragraphAlignment(alignment: NSTextAlignment) -> StringStylizer<Styling> {
+        let style: NSMutableParagraphStyle
+        if let currentStyle = _attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
+            currentStyle.alignment = alignment
+            style = currentStyle
+        } else {
+            style = NSMutableParagraphStyle()
+            style.alignment = alignment
+        }
+        
+        _attributes[NSParagraphStyleAttributeName] = style
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    /** 
+     The indentation of the receiver.
+     */
+    func paragraphIndent(firstLineHead firstLineHead: CGFloat? = nil, tail: CGFloat? = nil, otherHead: CGFloat? = nil) -> StringStylizer<Styling> {
+        let style = getParagraphStyle()
+        
+        if let firstLineHead = firstLineHead {
+            style.firstLineHeadIndent = firstLineHead
+        }
+        
+        if let otherHead = otherHead {
+           style.headIndent = otherHead
+        }
+        
+        if let tail = tail {
+            style.tailIndent = tail
+        }
+        
+        _attributes[NSParagraphStyleAttributeName] = style
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    func paragraphLineBreak(lineBreakMode: NSLineBreakMode) -> StringStylizer<Styling> {
+        let style = getParagraphStyle()
+        style.lineBreakMode = lineBreakMode
+        
+        _attributes[NSParagraphStyleAttributeName] = style
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    func paragraphLineHeight(maximum maximum: CGFloat? = nil, minimum: CGFloat? = nil, multiple: CGFloat? = nil) -> StringStylizer<Styling> {
+        let style = getParagraphStyle()
+        
+        if let maximum = maximum {
+            style.maximumLineHeight = maximum
+        }
+
+        if let minimum = minimum {
+            style.minimumLineHeight = minimum
+        }
+        
+        if let multiple = multiple {
+            style.lineHeightMultiple = multiple
+        }
+        
+        _attributes[NSParagraphStyleAttributeName] = style
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    func paragraphLineSpacing(after after: CGFloat? = nil, before: CGFloat? = nil) -> StringStylizer<Styling> {
+        let style = getParagraphStyle()
+        
+        if let after = after {
+            style.lineSpacing = after
+        }
+        
+        if let before = before {
+            style.paragraphSpacingBefore = before
+        }
+        
+        _attributes[NSParagraphStyleAttributeName] = style
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    func paragraphBaseWritingDirection(baseWritingDirection: NSWritingDirection) -> StringStylizer<Styling> {
+        let style: NSMutableParagraphStyle
+        if let currentStyle = _attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
+            style = currentStyle
+        } else {
+            style = NSMutableParagraphStyle()
+        }
+        
+        style.baseWritingDirection = baseWritingDirection
+
+        _attributes[NSParagraphStyleAttributeName] = style
+        let stylizer = StringStylizer<Styling>(attributedString: _attrString, range: _range, attributes: _attributes)
+        return stylizer
+    }
+    
+    private func getParagraphStyle() -> NSMutableParagraphStyle {
+        if let currentStyle = _attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
+            return currentStyle
+        } else {
+            return NSMutableParagraphStyle()
+        }
     }
 }
 
