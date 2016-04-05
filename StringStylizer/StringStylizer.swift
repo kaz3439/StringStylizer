@@ -347,13 +347,13 @@ extension StringStylizer where  T: Styling {
         return attrString
     }
     
-    func range(range: Range<UInt>? = nil) -> StringStylizer<RangeSelect> {
+    func range(range: Range<UInt>? = nil) -> StringStylizer<NarrowDown> {
         let attrString = NSMutableAttributedString(attributedString: _attrString)
         attrString.setAttributes(_attributes, range: NSRange(Int(_range.startIndex)..<Int(_range.endIndex)))
         
         let range = range ?? 0..<UInt(attrString.length)
         let endIndex = min(range.endIndex, UInt(_attrString.length))
         let validRange = range.startIndex..<endIndex
-        return StringStylizer<RangeSelect>(attributedString: attrString, range: validRange)
+        return StringStylizer<NarrowDown>(attributedString: attrString, range: validRange)
     }
 }

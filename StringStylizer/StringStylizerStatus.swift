@@ -10,4 +10,4 @@ import Foundation
 
 class StringStylizerStatus {}
 class Styling: StringStylizerStatus {}
-class RangeSelect: StringStylizerStatus {}
+class NarrowDown: StringStylizerStatus {}

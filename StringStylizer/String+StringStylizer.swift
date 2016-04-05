@@ -25,7 +25,7 @@ extension String {
      - parameter range:Range<UInt> range to apply attributes
      - returns: StringStylizer<Styling> "StringStylizer" object which is "Styling" state
      */
-    func stylize(range range: Range<UInt>) -> StringStylizer<RangeSelect> {
+    func stylize(range range: Range<UInt>) -> StringStylizer<NarrowDown> {
         let attributer = StringStylizer<Styling>(string: self)
         return attributer.range(range)
     }
