@@ -109,7 +109,7 @@ label.attributedText = "you".stylize().strong()
 ```swift
 let firstStep = "yay!".stylize() // => StringStylizer<Styling>
 ```
-#### 2. Call methods to select range. then StringStylizer become "NarrowDown" state
+#### 2. Call methods to select range. Then, StringStylizer change into "NarrowDown" state
 ```swift
 let secondStep = "yay!".stylize().range(0..<firstStep.count) // => StringStylizer<NarrowDown>
 ```
