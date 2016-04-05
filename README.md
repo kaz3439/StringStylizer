@@ -1,7 +1,8 @@
 # StringStylizer
+Type stricted builder class for NSAttributedString. 
 
 ## What's this?
-Type stricted builder class for NSAttributedString. It makes NSAttributedString more intuitive by wrapping method chains and operators.
+StringStylizer makes NSAttributedString more intuitive by wrapping method chains and operators.
 Building NSAttributedString is so difficult that it requires us to remember attribute names and types. With StringStylizer, we have no need to remember them.
 
 NSAttributedString has the following format. 
