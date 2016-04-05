@@ -51,7 +51,7 @@ let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeu
  label.attributedText = greed + msg + name
  ```
 
-This sample code generates the following styled label.
+This sample generates the following styled label.
  
 <img width="350" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
 
