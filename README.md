@@ -17,12 +17,18 @@ StringStylizer has the following format.
  let str = "some text".stylize().color(.whiteColor()).font(.HelveticaNeue).size(14).attr
 ```
 
-# Feature
+## Feature
 - [x] Type stricted format
 - [x] Assign ranges and attributes in a linear manner
 - [x] More readably
 
-# Usage
+## Requirements
+- iOS 8.0+
+- Swift 2.0+
+
+## Installation
+
+## Usage
  when you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it in a linear manner.
  
  ```swift
@@ -46,3 +52,5 @@ StringStylizer has the following format.
 This sample code generates the following styled label.
  
 <img width="350" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
+
+## License
