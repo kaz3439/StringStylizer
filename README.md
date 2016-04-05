@@ -31,8 +31,7 @@ let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeu
 
 ## Installation
 
-## Usage
-
+## Example
  
  ```swift
  let label = UILabel(frame: CGRectMake(0, 0, 100, 50))
