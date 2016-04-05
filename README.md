@@ -72,23 +72,23 @@ label.attributedText = "you".stylize().strong()
 ```
 
 ## Usage
-#### convert String to StringStylizer object which is "Styling" state
+#### 1. Convert String to StringStylizer object which is "Styling" state
 ```swift
 let firstStep = "yay!".stylize() // => StringStylizer<Styling>
 ```
-#### call methods to select range. then StringStylizer become "NarrowDown" state
+#### 2. Call methods to select range. then StringStylizer become "NarrowDown" state
 ```swift
 let secondStep = "yay!".stylize().range(0..<firstStep.count) // => StringStylizer<NarrowDown>
 ```
-#### call methods to set attributes. then StringStylizer become "Styling" state
+#### 3. Call methods to set attributes. then StringStylizer become "Styling" state
 ```swift
 let thirdStep = "yay!".stylize().range(0..<firstStep.count).size(14) // => StringStylizer<Styling>
 ```
-#### convert NSAttributedString object.
+#### 4. Convert NSAttributedString object.
 ```swift
 let fourthStep = "yay!".stylize().range(0..<firstStep.count).size(14).attr // => NSAttributedString
 ```
-#### join other NSAttributedString objects.
+#### 5. Join other NSAttributedString objects.
 ```swift
 let one     = "yay!".stylize().range(0..<firstStep.count).size(14).att
 let another = " yay!".stylize().color(0xffffff).attr
