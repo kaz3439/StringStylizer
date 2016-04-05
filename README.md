@@ -14,7 +14,7 @@ let attr: [String: AnyObject] = [
 let str = NSAttributedString(string: "some text", attributes: attr)
 ```
 
-StringStylizer enable developer to write code in a linear manner.
+StringStylizer enable developers to write code in a linear manner.
 When you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it as follows.
 ```swift
 let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeue).attr
