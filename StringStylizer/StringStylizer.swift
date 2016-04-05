@@ -330,6 +330,10 @@ public extension StringStylizer {
         return stylizer
     }
     
+    public var count: Int {
+        return _attrString.length
+    }
+    
     private func getParagraphStyle() -> NSMutableParagraphStyle {
         if let currentStyle = _attributes[NSParagraphStyleAttributeName] as? NSMutableParagraphStyle {
             return currentStyle
