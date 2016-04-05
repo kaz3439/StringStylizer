@@ -59,7 +59,12 @@ Of course, you can wrap up method chains in an abstructed method.
 ```swift
 extension StringStylizer {
   func strong() -> NSAttributedString {
-    self.stylize().color(0x123456).size(14).font(.HelveticaNeue_Italic).underline(.StyleDouble).attr
+    return self.stylize()
+            .color(0x123456)
+            .size(14)
+            .font(.HelveticaNeue_Italic)
+            .underline(.StyleDouble)
+            .attr
   }
 }
 
