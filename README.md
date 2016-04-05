@@ -117,7 +117,7 @@ let secondStep = "yay!".stylize().range(0..<firstStep.count) // => StringStylize
 ```swift
 let thirdStep = "yay!".stylize().range(0..<firstStep.count).size(14) // => StringStylizer<Styling>
 ```
-#### 4. Convert NSAttributedString object.
+#### 4. Convert to NSAttributedString object.
 ```swift
 let fourthStep = "yay!".stylize().range(0..<firstStep.count).size(14).attr // => NSAttributedString
 ```
