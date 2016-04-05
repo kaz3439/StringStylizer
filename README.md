@@ -22,7 +22,7 @@ let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeu
 
 ## Feature
 - [x] Type strict format
-- [x] Assign ranges and attributes in a linear manner
+- [x] Assigning ranges and attributes in a linear manner
 - [x] More readable than NSAttributedString
 
 ## Requirements
@@ -98,7 +98,7 @@ let fifthStep = one + another // => NSAttributedString
 That's it!
 
 ## Architecture
-StringStylizer is based on **"Builder Pattern"**. In addition, it has some states managed by **"Phantom Type"**.
+StringStylizer is based on **"Builder Pattern"**. In addition, it has states managed by **"Phantom Type"**.
 
 <img width="800" src="https://cloud.githubusercontent.com/assets/18266814/14271674/4d5bb9de-fb36-11e5-819c-cb2061d49be4.png">
 
@@ -106,3 +106,4 @@ Because of them, developers can write code in the liner manner and call proper m
 
 ## License
 
+StringStylizer is released under the MIT license. See LICENSE.txt for details.
