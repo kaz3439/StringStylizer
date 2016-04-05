@@ -18,9 +18,9 @@ StringStylizer has the following format.
 ```
 
 # Feature
-+ Type stricted format
-+ Assign ranges and attributes in a linear manner
-+ More readably
+- [x] Type stricted format
+- [x] Assign ranges and attributes in a linear manner
+- [x] More readably
 
 # Usage
  when you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it in a linear manner.
