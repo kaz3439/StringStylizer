@@ -1,7 +1,10 @@
 # StringStylizer
 
 Type safely builder class for NSAttributedString. It makes NSAttributedString more intitive by wrapping method chains and operators.
- 
+
+Building NSAttributedString is so tedious and requires us to remember attribute names and types. 
+
+
 # Usage
  when you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it in a linear manner.
  
@@ -22,8 +25,7 @@ Type safely builder class for NSAttributedString. It makes NSAttributedString mo
  
  label.attributedText = greed + msg + name
  ```
- 
- 
+
 This sample code generates the following styled label.
  
 <img width="350" src="https://cloud.githubusercontent.com/assets/18266814/14254571/49882d08-facb-11e5-9e3d-c37cbef6a003.png">
