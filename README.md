@@ -5,18 +5,19 @@ Type stricted builder class for NSAttributedString.
 StringStylizer makes NSAttributedString more intuitive by wrapping method chains and operators.
 Building NSAttributedString is so difficult that it requires us to remember attribute names and types. With StringStylizer, we have no need to remember them.
 
-NSAttributedString has the following format. 
+NSAttributedString has the following format.
 ```swift
-    let attr: [String: AnyObject] = [
-        NSForegroundColorAttributeName: UIColor.whiteColor(),
-        NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 14)
-    ]
-    let str = NSAttributedString(string: "some text", attributes: attr)
+let attr: [String: AnyObject] = [
+    NSForegroundColorAttributeName: UIColor.whiteColor(),
+    NSFontAttributeName: UIFont(name: "HelveticaNeue", size: 14)
+]
+let str = NSAttributedString(string: "some text", attributes: attr)
 ```
 
-StringStylizer has the following format.
+StringStylizer enable developer to write code in a linear manner.
+When you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it as follows.
 ```swift
- let str = "some text".stylize().color(.whiteColor()).font(.HelveticaNeue).size(14).attr
+let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeue).attr
 ```
 
 ## Feature
@@ -31,7 +32,7 @@ StringStylizer has the following format.
 ## Installation
 
 ## Usage
- when you convert String to NSAttributedString which has some colors, sizes and fonts, you can write it in a linear manner.
+
  
  ```swift
  let label = UILabel(frame: CGRectMake(0, 0, 100, 50))
