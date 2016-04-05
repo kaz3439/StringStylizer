@@ -8,6 +8,6 @@
 
 import Foundation
 
-class StringStylizerStatus {}
-class Styling: StringStylizerStatus {}
-class NarrowDown: StringStylizerStatus {}
+public class StringStylizerStatus {}
+public class Styling: StringStylizerStatus {}
+public class NarrowDown: StringStylizerStatus {}

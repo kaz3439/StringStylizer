@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum StringStylizerFontName: String {
+public enum StringStylizerFontName: String {
     case Copperplate_Light = "Copperplate-Light"
     case Copperplate = "Copperplate"
     case Copperplate_Bold = "Copperplate-Bold"

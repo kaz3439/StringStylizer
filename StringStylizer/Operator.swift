@@ -8,7 +8,7 @@
 
 import Foundation
 
-func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
+public func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
     let concat = NSMutableAttributedString()
     concat.appendAttributedString(left)
     concat.appendAttributedString(right)

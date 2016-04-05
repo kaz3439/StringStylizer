@@ -8,13 +8,13 @@
 
 import Foundation
 
-extension String {
+public extension String {
     /**
      Instantiate StringStylizer<Styling> from caller string.
     
      - returns: StringStylizer<Styling> "StringStylizer" object which is "Styling" state
      */
-    func stylize() -> StringStylizer<Styling> {
+    public func stylize() -> StringStylizer<Styling> {
         let attributer = StringStylizer<Styling>(string: self)
         return attributer
     }
@@ -25,7 +25,7 @@ extension String {
      - parameter range:Range<UInt> range to apply attributes
      - returns: StringStylizer<Styling> "StringStylizer" object which is "Styling" state
      */
-    func stylize(range range: Range<UInt>) -> StringStylizer<NarrowDown> {
+    public func stylize(range range: Range<UInt>) -> StringStylizer<NarrowDown> {
         let attributer = StringStylizer<Styling>(string: self)
         return attributer.range(range)
     }
