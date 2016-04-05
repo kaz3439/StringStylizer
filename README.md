@@ -1,5 +1,5 @@
 # StringStylizer
-Type strict builder class for NSAttributedString. 
+Type strict builder class for [NSAttributedString](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/). 
 
 ## What's this?
 StringStylizer makes NSAttributedString more intuitive with method chains and operators.
