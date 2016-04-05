@@ -21,7 +21,7 @@ let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeu
 ```
 
 ## Feature
-- [x] Type stricted format
+- [x] Type strict format
 - [x] Assign ranges and attributes in a linear manner
 - [x] More readably
 
