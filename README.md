@@ -50,7 +50,7 @@ github "kazuhiro3439/StringStylizer"
 ```
 
 + In Xcode, move to "Genera > Build Phase > Linked Frameworks and Library"
-+ Add the framework
++ Add the framework to your project
 + Add a new run script and put the following code
 ```
 /usr/local/bin/carthage copy-frameworks
