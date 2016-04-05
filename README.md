@@ -135,7 +135,7 @@ StringStylizer is based on **"Builder Pattern"**. In addition, it has states man
 
 <img width="800" src="https://cloud.githubusercontent.com/assets/18266814/14271674/4d5bb9de-fb36-11e5-819c-cb2061d49be4.png">
 
-Because of them, developers can
+Because of them, developers are able to
 - write their code in a liner manner
 - call proper methods depending on the situation.
 
