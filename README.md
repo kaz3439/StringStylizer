@@ -113,7 +113,7 @@ let firstStep = "yay!".stylize() // => StringStylizer<Styling>
 ```swift
 let secondStep = "yay!".stylize().range(0..<firstStep.count) // => StringStylizer<NarrowDown>
 ```
-#### 3. Call methods to set attributes. Then, StringStylizer become "Styling" state
+#### 3. Call methods to set attributes. Then, StringStylizer change into "Styling" state
 ```swift
 let thirdStep = "yay!".stylize().range(0..<firstStep.count).size(14) // => StringStylizer<Styling>
 ```
