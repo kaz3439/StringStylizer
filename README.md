@@ -1,5 +1,5 @@
 # StringStylizer
-Type strict builder class for NSAttributedString. 
+Type strict builder class for [NSAttributedString](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/). 
 
 ## What's this?
 StringStylizer makes NSAttributedString more intuitive with method chains and operators.
@@ -14,7 +14,7 @@ let attr: [String: AnyObject] = [
 let str = NSAttributedString(string: "some text", attributes: attr)
 ```
 
-StringStylizer enable developers to write code in a linear manner.
+StringStylizer enable developers to read and write code in a linear manner.
 If you wanna convert String to NSAttributedString which has some colors, sizes and fonts, you can write it as follows.
 ```swift
 let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeue).attr
@@ -30,6 +30,39 @@ let str = "some text".stylize().color(.whiteColor()).size(14).font(.HelveticaNeu
 - Swift 2.0+
 
 ## Installation
++ Install Carthage from Homebrew
+```
+> ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+> brew update
+> brew install carthage
+```
++ Move your project dir and create Cartfile
+```
+> touch Cartfile
+```
++ add the following line to Cartfile
+```
+github "kazuhiro3439/StringStylizer"
+```
++ Create framework
+```
+> carthage update --platform iOS
+```
+
++ In Xcode, move to "Genera > Build Phase > Linked Frameworks and Library"
++ Add the framework to your project
++ Add a new run script and put the following code
+```
+/usr/local/bin/carthage copy-frameworks
+```
++ Click "+" At Input file and Add the framework path
+```
+$(SRCROOT)/Carthage/Build/iOS/StringStylizer.framework
+```
++ write Import statement on your source file
+```
+Import StringStylizer
+```
 
 ## Example
  
@@ -76,15 +109,15 @@ label.attributedText = "you".stylize().strong()
 ```swift
 let firstStep = "yay!".stylize() // => StringStylizer<Styling>
 ```
-#### 2. Call methods to select range. then StringStylizer become "NarrowDown" state
+#### 2. Call methods to select range. Then, StringStylizer change into "NarrowDown" state
 ```swift
 let secondStep = "yay!".stylize().range(0..<firstStep.count) // => StringStylizer<NarrowDown>
 ```
-#### 3. Call methods to set attributes. then StringStylizer become "Styling" state
+#### 3. Call methods to set attributes. Then, StringStylizer change into "Styling" state
 ```swift
 let thirdStep = "yay!".stylize().range(0..<firstStep.count).size(14) // => StringStylizer<Styling>
 ```
-#### 4. Convert NSAttributedString object.
+#### 4. Convert to NSAttributedString object.
 ```swift
 let fourthStep = "yay!".stylize().range(0..<firstStep.count).size(14).attr // => NSAttributedString
 ```
@@ -102,7 +135,9 @@ StringStylizer is based on **"Builder Pattern"**. In addition, it has states man
 
 <img width="800" src="https://cloud.githubusercontent.com/assets/18266814/14271674/4d5bb9de-fb36-11e5-819c-cb2061d49be4.png">
 
-Because of them, developers can write code in the liner manner and call proper methods depending on the situation.
+Because of them, developers are able to
+- write their code in a liner manner
+- call proper methods depending on the situation.
 
 ## License
 
