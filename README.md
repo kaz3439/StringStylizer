@@ -111,19 +111,19 @@ let firstStep = "yay!".stylize() // => StringStylizer<Styling>
 ```
 #### 2. Call methods to select range. Then, StringStylizer change into "NarrowDown" state
 ```swift
-let secondStep = "yay!".stylize().range(0..<firstStep.count) // => StringStylizer<NarrowDown>
+let secondStep = "yay!".stylize().range(0..<UInt.max) // => StringStylizer<NarrowDown>
 ```
 #### 3. Call methods to set attributes. Then, StringStylizer change into "Styling" state
 ```swift
-let thirdStep = "yay!".stylize().range(0..<firstStep.count).size(14) // => StringStylizer<Styling>
+let thirdStep = "yay!".stylize().range(0..<UInt.max).size(14) // => StringStylizer<Styling>
 ```
 #### 4. Convert to NSAttributedString object.
 ```swift
-let fourthStep = "yay!".stylize().range(0..<firstStep.count).size(14).attr // => NSAttributedString
+let fourthStep = "yay!".stylize().range(0..<UInt.max).size(14).attr // => NSAttributedString
 ```
 #### 5. Join other NSAttributedString objects.
 ```swift
-let one     = "yay!".stylize().range(0..<firstStep.count).size(14).att
+let one     = "yay!".stylize().range(0..<UInt.max).size(14).att
 let another = " yay!".stylize().color(0xffffff).attr
 let fifthStep = one + another // => NSAttributedString
 ```
