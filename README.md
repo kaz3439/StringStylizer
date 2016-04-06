@@ -131,7 +131,7 @@ let fifthStep = one + another // => NSAttributedString
 That's it!
 
 ## Architecture
-StringStylizer is based on **"Builder Pattern"**. In addition, it has states managed by **"Phantom Type"**.
+StringStylizer is based on **"Builder Pattern"** (Effective Java version). In addition, it has states managed by **"Phantom Type"**.
 
 <img width="800" src="https://cloud.githubusercontent.com/assets/18266814/14271674/4d5bb9de-fb36-11e5-819c-cb2061d49be4.png">
 
