@@ -24,6 +24,17 @@
 
 import Foundation
 
+/** 
+ available font names in iOS App
+ 
+ This enum is generated from the following script
+ ```
+ let name = UIFont.familyNames()
+                .flatMap { UIFont.fontNamesForFamilyName($0) }
+                .map { "case \($0.stringByReplacingOccurrencesOfString("-", withString: "_")) = \"\($0)\"" }
+                .joinWithSeparator("\n")
+ ```
+ */
 public enum StringStylizerFontName: String {
     case Copperplate_Light = "Copperplate-Light"
     case Copperplate = "Copperplate"

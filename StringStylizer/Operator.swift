@@ -24,6 +24,15 @@
 
 import Foundation
 
+/**
+ combine two NSAttributedString object
+ 
+ 
+ - paramter left:NSAttributedString
+ - paramter right:NSAttributedString
+ 
+ - returns: NSAttributedString
+ */
 public func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString {
     let concat = NSMutableAttributedString()
     concat.appendAttributedString(left)
