@@ -123,7 +123,7 @@ let fourthStep = "yay!".stylize().range(0..<UInt.max).size(14).attr // => NSAttr
 ```
 #### 5. Join other NSAttributedString objects.
 ```swift
-let one     = "yay!".stylize().range(0..<UInt.max).size(14).att
+let one     = "yay!".stylize().range(0..<UInt.max).size(14).attr
 let another = " yay!".stylize().color(0xffffff).attr
 let fifthStep = one + another // => NSAttributedString
 ```
