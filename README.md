@@ -2,7 +2,7 @@
 Type strict builder class for [NSAttributedString](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSAttributedString_Class/). 
 
 ## What's this?
-StringStylizer makes NSAttributedString more intuitive with method chains and operators.
+StringStylizer makes NSAttributedString more intuitive with Method chain and Operator.
 Building NSAttributedString is so difficult that it requires us to remember attribute names and types. If you write code with StringStylizer, There is no need to remember them :smiley:
 
 NSAttributedString has the following format.
